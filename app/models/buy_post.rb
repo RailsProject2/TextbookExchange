@@ -4,4 +4,5 @@ class BuyPost < ActiveRecord::Base
   validates :name, presence: true
   validates :isbn, presence: true
   validates :user, presence: true
+  validates :price, presence: true
 end

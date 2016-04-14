@@ -16,6 +16,6 @@ class SellPostsController < ApplicationController
 
 private
     def post_params
-        params.require(:sell_post).permit(:name, :isbn)
+        params.require(:sell_post).permit(:name, :isbn, :price)
     end
 end

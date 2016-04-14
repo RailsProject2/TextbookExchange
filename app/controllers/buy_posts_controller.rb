@@ -1,7 +1,7 @@
 class BuyPostsController < ApplicationController
 	
 	def index
-		@buy_posts = BuyPost.all
+		@buy_posts = BuyPost.order(:price)
 	end
 
 	def new
@@ -15,9 +15,14 @@ class BuyPostsController < ApplicationController
 		redirect_to action: 'index'
 	end
 
+	def sort
+		@buy_posts = BuyPost.where(isbn: params[:id])
+	end
+
+
 private
 	def post_params
-		params.require(:buy_post).permit(:name, :isbn)
+		params.require(:buy_post).permit(:name, :isbn, :price)
 	end
 
 

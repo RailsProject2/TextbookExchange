@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   devise_for :users
   root 'buy_posts#index'
   resources :buy_posts, only: [:new, :create]
+
+  get 'buy_posts/sort/:id', to: 'buy_posts#sort'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
