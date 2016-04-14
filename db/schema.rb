@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160410224047) do
+ActiveRecord::Schema.define(version: 20160414014431) do
 
   create_table "buy_posts", force: :cascade do |t|
     t.string   "name"
@@ -46,6 +46,17 @@ ActiveRecord::Schema.define(version: 20160410224047) do
   end
 
   add_index "textbooks", ["user_id"], name: "index_textbooks_on_user_id"
+
+  create_table "user_contact_info", force: :cascade do |t|
+    t.string "name"
+    t.string "phone"
+    t.string "facebook"
+  end
+
+  create_table "user_info", force: :cascade do |t|
+    t.string "phone"
+    t.string "facebook"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
