@@ -14,6 +14,10 @@ class SellPostsController < ApplicationController
         redirect_to action: 'index'
     end
 
+    def sort
+        @sell_posts = SellPost.where(isbn: params[:id])
+    end
+
 private
     def post_params
         params.require(:sell_post).permit(:name, :isbn, :price)

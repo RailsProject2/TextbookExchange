@@ -6,8 +6,9 @@
   <%= submit_tag("Search") %>
 <% end %>
 
-<% @sell_posts.each do |sell_post| %>
-    <p> <%= "#{sell_post.name} #{sell_post.isbn} #{sell_post.price} " %> </p>
+
+<% (@sell_posts.sort_by) .each do |sell_post| %>
+	<p> <%= "#{sell_post.name} #{sell_post.isbn} #{sell_post.price} " %> </p>
 
 
 

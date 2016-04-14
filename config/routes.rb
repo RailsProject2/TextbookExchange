@@ -14,6 +14,14 @@ Rails.application.routes.draw do
   resources :buy_posts, only: [:new, :create]
 
   get 'buy_posts/sort', to: 'buy_posts#sort'
+
+  get 'buy_posts', to: 'buy_posts#index'
+
+
+  resources :sell_posts, only: [:new, :create]
+
+  get 'sell_posts/sort', to: 'sell_posts#sort'
+  get 'sell_posts', to: 'sell_posts#index'
   # get 'buy_posts/sort/:id', to: 'buy_posts#sort'
 
   # The priority is based upon order of creation: first created -> highest priority.
