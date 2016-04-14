@@ -1,4 +1,4 @@
-<h1><%= current_user.name %>!</h1>
+<h1><%= current_user.name %></h1>
 <h3>Books for sale:</h3>
 <% if @user and @user.id == current_user.id %>
     <p><%= button_to "Post new book for sale", sell_post_new_path(id: @user.id), :class => "button medium", :method => :get %></p>

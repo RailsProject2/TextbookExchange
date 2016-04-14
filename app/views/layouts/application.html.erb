@@ -9,14 +9,14 @@
 <body>
     <ul>
         <li><%= link_to 'Requested books', buy_posts_path %></li>
-        <li>Books for sale</li>
+        <li><%= link_to 'Books for sale', sell_posts_path %></li>
         <li>Welcome to the Textbook Exchange</li>
         <% if user_signed_in? %>
             <li>
                 <%= link_to current_user.name, users_show_path %>
                 <ul>
                     <li><%= link_to 'Request a book', new_buy_post_path %></li>
-                    <li>Sell a book</li>
+                    <li><%= link_to 'Sell a book', new_sell_post_path %></li>
                     <li><%= link_to 'Log Out', destroy_user_session_path, :method=>'delete' %></li>
                 </ul>
             </li>

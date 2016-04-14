@@ -4533,3 +4533,285 @@ Processing by UsersController#show as HTML
   [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 5]]
   Rendered users/show.html.erb within layouts/application (2.3ms)
 Completed 200 OK in 36ms (Views: 34.9ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.8ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.0ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_buy_posts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_buy_posts_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.9ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_sell_posts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_sell_posts_on_user_id' AND type='index'
+
+  [1m[36m (1.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_textbooks_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_textbooks_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.9ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.9ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+
+
+Started GET "/" for 10.0.2.2 at 2016-04-14 03:06:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BuyPostsController#index as HTML
+  [1m[35mBuyPost Load (1.4ms)[0m  SELECT "buy_posts".* FROM "buy_posts"
+  Rendered buy_posts/index.html.erb within layouts/application (15.9ms)
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+Completed 200 OK in 857ms (Views: 806.3ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/assets/buy_post.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 10.0.2.2 at 2016-04-14 03:07:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sell_post.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 10.0.2.2 at 2016-04-14 03:07:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 10.0.2.2 at 2016-04-14 03:07:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 10.0.2.2 at 2016-04-14 03:07:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 10.0.2.2 at 2016-04-14 03:07:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 10.0.2.2 at 2016-04-14 03:07:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 10.0.2.2 at 2016-04-14 03:07:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 10.0.2.2 at 2016-04-14 03:07:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/sell_post.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 10.0.2.2 at 2016-04-14 03:07:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/buy_post.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 10.0.2.2 at 2016-04-14 03:07:01 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for 10.0.2.2 at 2016-04-14 03:07:01 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/users/show" for 10.0.2.2 at 2016-04-14 03:08:24 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered users/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 165ms (Views: 163.3ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/users/sign_out" for 10.0.2.2 at 2016-04-14 03:08:42 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"RH2wU5AYa05OwMdSQYjqPfSErXVUCO0vKdX6/AkhvrPBXYAnEQIRA4+xqkpDbQpn0pYllmPkEsclBqF5GEnZyA=="}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 47ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 10.0.2.2 at 2016-04-14 03:08:42 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BuyPostsController#index as HTML
+  [1m[35mBuyPost Load (1.1ms)[0m  SELECT "buy_posts".* FROM "buy_posts"
+  Rendered buy_posts/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 178ms (Views: 175.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/sign_in" for 10.0.2.2 at 2016-04-14 03:08:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (7.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (294.9ms)
+Completed 200 OK in 482ms (Views: 476.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 10.0.2.2 at 2016-04-14 03:08:53 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i+EYcROaWMSD3cYWJl6qg4KcIlikC1etWC/TQEvKGLkyIKz9OlR8Gb7GragPwiMlQyo06QMvNcVZ6QQLXsLGVQ==", "user"=>{"email"=>"allanwlevy@berkeley.edu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "allanwlevy@berkeley.edu"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (4.4ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2016-04-14 03:08:53.962026"], ["sign_in_count", 2], ["updated_at", "2016-04-14 03:08:53.963624"], ["id", 3]]
+  [1m[35m (3.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 174ms (ActiveRecord: 9.1ms)
+
+
+Started GET "/" for 10.0.2.2 at 2016-04-14 03:08:54 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BuyPostsController#index as HTML
+  [1m[36mBuyPost Load (1.0ms)[0m  [1mSELECT "buy_posts".* FROM "buy_posts"[0m
+  Rendered buy_posts/index.html.erb within layouts/application (2.0ms)
+  [1m[35mUser Load (2.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+Completed 200 OK in 184ms (Views: 179.3ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/users/show" for 10.0.2.2 at 2016-04-14 03:09:02 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered users/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 179ms (Views: 176.3ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/users/sign_out" for 10.0.2.2 at 2016-04-14 03:09:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"mbUemLDKTOLGj39D0MWBc2t/+wdkvxDrWD5QdYbAMWu+qdOBw02Y4oh8KhBmfMZjHzg+oKOhzcakoGpezGx+MA=="}
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 10.0.2.2 at 2016-04-14 03:09:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BuyPostsController#index as HTML
+  [1m[36mBuyPost Load (1.3ms)[0m  [1mSELECT "buy_posts".* FROM "buy_posts"[0m
+  Rendered buy_posts/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 158ms (Views: 155.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/sign_up" for 10.0.2.2 at 2016-04-14 03:09:06 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (65.5ms)
+Completed 200 OK in 267ms (Views: 265.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 10.0.2.2 at 2016-04-14 03:09:26 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YQY25mPTd98SmgpAKyFL8fX7kPlVNrQdAOVQhF6nq0pd27yVw8l5X5e08LGBMrd0wl1SNC+Nf8uL9gyfRN74dw==", "user"=>{"name"=>"Allan Levy", "facebook"=>"a;ldsjf", "phone"=>"a;sdljf", "email"=>"allanwlevy@berkeley.edu", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (1.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'allanwlevy@berkeley.edu' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered devise/shared/_links.html.erb (2.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (58.1ms)
+Completed 200 OK in 409ms (Views: 257.9ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/users" for 10.0.2.2 at 2016-04-14 03:09:58 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dmvOeTI7ihM2HjYH8mWgE57YL86VQz/YzAxMWgst+blKtkQKkiGEk7MwzPZYdlyWqX7tA+/49A5HHxBBEVSqhA==", "user"=>{"name"=>"Allan Levy", "facebook"=>"a;ldsjf", "phone"=>"a;sdljf", "email"=>"allanwlevy@berkeley.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (1.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'allanwlevy@berkeley.com' LIMIT 1
+  [1m[36mSQL (3.0ms)[0m  [1mINSERT INTO "users" ("name", "phone", "facebook", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Allan Levy"], ["phone", "a;sdljf"], ["facebook", "a;ldsjf"], ["email", "allanwlevy@berkeley.com"], ["encrypted_password", "$2a$10$QDSp0QeoPB4q16UeYDkEy.upm/FgLHf48o6qlFi4i35fwoeVPc/Z6"], ["created_at", "2016-04-14 03:09:58.610471"], ["updated_at", "2016-04-14 03:09:58.610471"]]
+  [1m[35m (3.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (3.2ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2016-04-14 03:09:58.619519"], ["current_sign_in_at", "2016-04-14 03:09:58.619519"], ["last_sign_in_ip", "10.0.2.2"], ["current_sign_in_ip", "10.0.2.2"], ["sign_in_count", 1], ["updated_at", "2016-04-14 03:09:58.620615"], ["id", 4]]
+  [1m[36m (4.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 139ms (ActiveRecord: 15.4ms)
+
+
+Started GET "/" for 10.0.2.2 at 2016-04-14 03:09:58 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BuyPostsController#index as HTML
+  [1m[35mBuyPost Load (1.0ms)[0m  SELECT "buy_posts".* FROM "buy_posts"
+  Rendered buy_posts/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+Completed 200 OK in 166ms (Views: 163.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/show" for 10.0.2.2 at 2016-04-14 03:10:03 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  [1m[35mUser Load (1.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  Rendered users/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 155ms (Views: 152.8ms | ActiveRecord: 1.2ms)
+
+
+Started DELETE "/users/sign_out" for 10.0.2.2 at 2016-04-14 03:10:14 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"x/0bl6+GSz4fNrsOuBCjF7Vv7pi8LQ1+16BFkQGvzGn7IJHkD5xFvpoYQf8SA1+SgsksVcaWxqhcsxmKG9afVA=="}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2016-04-14 03:10:14 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BuyPostsController#index as HTML
+  [1m[35mBuyPost Load (1.1ms)[0m  SELECT "buy_posts".* FROM "buy_posts"
+  Rendered buy_posts/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 159ms (Views: 157.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/sign_in" for 10.0.2.2 at 2016-04-14 03:10:16 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (45.2ms)
+Completed 200 OK in 232ms (Views: 231.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 10.0.2.2 at 2016-04-14 03:10:28 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gZwZIwezlF8BJ1UTszR54LmerCriL2CLTeel4galu3MgRE4v1xkTmbQVafQCez+9uj7tOT/y+NedmwZz1G3AqQ==", "user"=>{"email"=>"allanwlevy@berkeley.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "allanwlevy@berkeley.com"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (4.2ms)[0m  [1mUPDATE "users" SET "remember_created_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_created_at", "2016-04-14 03:10:28.601242"], ["updated_at", "2016-04-14 03:10:28.602336"], ["id", 4]]
+  [1m[35m (3.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (4.4ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["current_sign_in_at", "2016-04-14 03:10:28.612768"], ["sign_in_count", 2], ["updated_at", "2016-04-14 03:10:28.614805"], ["id", 4]]
+  [1m[36m (2.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 131ms (ActiveRecord: 16.2ms)
+
+
+Started GET "/" for 10.0.2.2 at 2016-04-14 03:10:28 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BuyPostsController#index as HTML
+  [1m[35mBuyPost Load (1.2ms)[0m  SELECT "buy_posts".* FROM "buy_posts"
+  Rendered buy_posts/index.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+Completed 200 OK in 167ms (Views: 163.6ms | ActiveRecord: 2.5ms)
