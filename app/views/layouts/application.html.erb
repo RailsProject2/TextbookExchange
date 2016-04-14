@@ -7,6 +7,33 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+    <ul>
+        <li><%= link_to 'Requested books', buy_posts_path %></li>
+        <li><%= link_to 'Books for sale', sell_posts_path %></li>
+        <li>Welcome to the Textbook Exchange</li>
+        <% if user_signed_in? %>
+            <li>
+                <%= link_to current_user.name, users_show_path %>
+                <ul>
+                    <li><%= link_to 'Request a book', new_buy_post_path %></li>
+                    <li><%= link_to 'Sell a book', new_sell_post_path %></li>
+                    <li><%= link_to 'Log Out', destroy_user_session_path, :method=>'delete' %></li>
+                </ul>
+            </li>
+        <% else %>
+            <li><%= link_to 'Log In', new_user_session_path %></li>
+            <li><%= link_to 'Join Textbook Exchange', new_user_registration_path %></li>
+        <% end %>
+    </ul>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
 <%= yield %>
 
