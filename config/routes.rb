@@ -7,11 +7,14 @@ Rails.application.routes.draw do
 
   get 'users/delete'
 
-  devise_for :users
+  get 'users/show', :to => 'users#show'
+
+  devise_for :users, :controllers => { registrations: 'registrations' }
   root 'buy_posts#index'
   resources :buy_posts, only: [:new, :create]
 
-  get 'buy_posts/sort/:id', to: 'buy_posts#sort'
+  get 'buy_posts/sort', to: 'buy_posts#sort'
+  # get 'buy_posts/sort/:id', to: 'buy_posts#sort'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

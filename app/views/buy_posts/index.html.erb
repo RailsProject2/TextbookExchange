@@ -1,7 +1,11 @@
 <h1>  All Buy Posts </h1>
 
 
-
+<%= form_tag("/buy_posts/sort", method: "get") do %>
+  <%= label_tag(:id, "Search for:") %>
+  <%= text_field_tag(:id) %>
+  <%= submit_tag("Search") %>
+<% end %>
 
 <% (@buy_posts.sort_by) .each do |buy_post| %>
 	<p> <%= "#{buy_post.name} #{buy_post.isbn} #{buy_post.price} " %> </p>

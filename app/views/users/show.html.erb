@@ -1,15 +1,17 @@
-<h1><%= @user.name if @user.name %>!</h1>
-<h3>Books for sale:<h3>
-<% if @user.id == current_user.id %>
+<h1><%= current_user.name %>!</h1>
+<h3>Books for sale:</h3>
+<% if @user and @user.id == current_user.id %>
     <p><%= button_to "Post new book for sale", sell_post_new_path(id: @user.id), :class => "button medium", :method => :get %></p>
 <% end %>
-<% Sell_posts.where(user: @user.id).find_each do |sell_post| %>
+<% if @user %>
+<% SellPost.where(user: @user.id).find_each do |sell_post|%>
     <p><%= "#{sell_post.name} #{sell_post.isbn} #{sell_post.class_name} #{sell_post.class_number}" %></p>
 <% end %>
 <h3>Books wanted:</h3>
-<% if @user.id == current_user.id %>
+<% if @user and @user.id == current_user.id %>
     <p><%= button_to "Post new wanted book", buy_post_new_path(id: @user.id), :class => "button medium", :method => :get %></p>
 <% end %>
-<% Sell_posts.where(user: @user.id).find_each do |sell_post| %>
+<% BuyPost.where(user: @user.id).find_each do |buy_post|%>
     <p><%= "#{buy_post.name} #{buy_post.isbn} #{buy_post.class_name} #{buy_post.class_number}" %></p>
+<% end %>
 <% end %>
