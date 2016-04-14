@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
   get 'users/delete'
 
-  devise_for :users
+  get 'users/show', :to => 'users#show'
+
+  devise_for :users, :controllers => { registrations: 'registrations' }
   root 'buy_posts#index'
   resources :buy_posts, only: [:new, :create]
   # The priority is based upon order of creation: first created -> highest priority.
