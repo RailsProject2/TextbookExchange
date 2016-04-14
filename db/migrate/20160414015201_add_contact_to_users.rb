@@ -1,6 +1,7 @@
 class AddContactToUsers < ActiveRecord::Migration
   def change
-    create_table :user_info do |t|
+    change_table :users do |t|
+      t.string :name
       t.string :phone
       t.string :facebook
     end
