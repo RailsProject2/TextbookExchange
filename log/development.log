@@ -7946,3 +7946,529 @@ Processing by SellPostsController#index as HTML
   Rendered sell_posts/index.html.erb within layouts/application (0.8ms)
   [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
 Completed 200 OK in 22ms (Views: 21.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-19 16:19:43 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BuyPostsController#index as HTML
+  [1m[35mBuyPost Load (0.2ms)[0m  SELECT "buy_posts".* FROM "buy_posts"  ORDER BY "buy_posts"."price" ASC
+  Rendered buy_posts/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 347ms (Views: 334.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/buy_posts/sort?utf8=%E2%9C%93&id=Potato&commit=Search" for 127.0.0.1 at 2016-04-19 16:19:52 -0700
+Processing by BuyPostsController#sort as HTML
+  Parameters: {"utf8"=>"✓", "id"=>"Potato", "commit"=>"Search"}
+  [1m[36mBuyPost Load (0.4ms)[0m  [1mSELECT "buy_posts".* FROM "buy_posts" WHERE "buy_posts"."isbn" = ?[0m  [["isbn", "Potato"]]
+  Rendered buy_posts/sort.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 62ms (Views: 56.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-19 16:20:01 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (7.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (97.2ms)
+Completed 200 OK in 181ms (Views: 135.7ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-04-19 16:20:05 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3A3wzs7A6/1U6SJPaY/qAlglVaSA3CaFAU3XCIsCdyYZoEI23vZnPRP6QaCB7/eH0H27WDfDdPmgyVz+ubMyyw==", "user"=>{"email"=>"sxk1693@berkeley.edu", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "sxk1693@berkeley.edu"]]
+Completed 401 Unauthorized in 5ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3A3wzs7A6/1U6SJPaY/qAlglVaSA3CaFAU3XCIsCdyYZoEI23vZnPRP6QaCB7/eH0H27WDfDdPmgyVz+ubMyyw==", "user"=>{"email"=>"sxk1693@berkeley.edu", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (3.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 150ms (Views: 47.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2016-04-19 16:20:08 -0700
+Processing by RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (7.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (57.3ms)
+Completed 200 OK in 113ms (Views: 109.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-04-19 16:20:41 -0700
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CiHF6XE1/uZujSIhGKJoaa4j/FOgT53twH120Isk5vnPjHcRYQNyJimeQc7wwnXsJnsSrxdQz5Fh+f0muZWjFA==", "user"=>{"name"=>"Sirjan Kafle", "facebook"=>"SirjanK", "phone"=>"9729002931", "email"=>"sxk1693@berkeley.edu", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'sxk1693@berkeley.edu' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "phone", "facebook", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Sirjan Kafle"], ["phone", "9729002931"], ["facebook", "SirjanK"], ["email", "sxk1693@berkeley.edu"], ["encrypted_password", "$2a$10$QY0Sf7rSDn0CDHv6V0m0YOGbU.Y.Qo.b0URtWzDpteR0gE7tdNDJq"], ["created_at", "2016-04-19 23:20:41.404563"], ["updated_at", "2016-04-19 23:20:41.404563"]]
+  [1m[35m (267.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2016-04-19 23:20:41.676583"], ["current_sign_in_at", "2016-04-19 23:20:41.676583"], ["last_sign_in_ip", "127.0.0.1"], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2016-04-19 23:20:41.678501"], ["id", 3]]
+  [1m[36m (169.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 573ms (ActiveRecord: 438.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-19 16:20:41 -0700
+Processing by BuyPostsController#index as HTML
+  [1m[35mBuyPost Load (0.4ms)[0m  SELECT "buy_posts".* FROM "buy_posts"  ORDER BY "buy_posts"."price" ASC
+  Rendered buy_posts/index.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+Completed 200 OK in 58ms (Views: 56.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/buy_posts/new" for 127.0.0.1 at 2016-04-19 16:20:48 -0700
+Processing by BuyPostsController#new as HTML
+  Rendered buy_posts/new.html.erb within layouts/application (14.7ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+Completed 200 OK in 59ms (Views: 57.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/buy_posts" for 127.0.0.1 at 2016-04-19 16:21:04 -0700
+Processing by BuyPostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wl5plBHr7Ls9Z0qvjzK7b9Ik5qfKgBVIiHc83VCpJJsH89tsAd1ge3p0KUBnUqbqWnwIW32fRzQp87crYhhhdg==", "buy_post"=>{"name"=>"Sirjan", "isbn"=>"7234212356", "price"=>"78"}, "commit"=>"Create Buy post"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "buy_posts" ("name", "isbn", "price", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Sirjan"], ["isbn", "7234212356"], ["price", 78], ["user_id", 3], ["created_at", "2016-04-19 23:21:05.077727"], ["updated_at", "2016-04-19 23:21:05.077727"]]
+  [1m[35m (225.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 357ms (ActiveRecord: 225.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-19 16:21:05 -0700
+Processing by BuyPostsController#index as HTML
+  [1m[36mBuyPost Load (0.4ms)[0m  [1mSELECT "buy_posts".* FROM "buy_posts"  ORDER BY "buy_posts"."price" ASC[0m
+  Rendered buy_posts/index.html.erb within layouts/application (2.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+Completed 200 OK in 45ms (Views: 43.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/sell_posts" for 127.0.0.1 at 2016-04-19 16:21:17 -0700
+Processing by SellPostsController#index as HTML
+  [1m[36mSellPost Load (0.4ms)[0m  [1mSELECT "sell_posts".* FROM "sell_posts"[0m
+  Rendered sell_posts/index.html.erb within layouts/application (11.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+Completed 200 OK in 58ms (Views: 51.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/buy_posts" for 127.0.0.1 at 2016-04-19 16:21:19 -0700
+Processing by BuyPostsController#index as HTML
+  [1m[36mBuyPost Load (0.4ms)[0m  [1mSELECT "buy_posts".* FROM "buy_posts"  ORDER BY "buy_posts"."price" ASC[0m
+  Rendered buy_posts/index.html.erb within layouts/application (2.8ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+Completed 200 OK in 45ms (Views: 43.7ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-04-19 16:32:18 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"R/2MmoHAC/akM66p1Ky1NKZkXLWCBdQD4Gpqyy/x6p6CUD5ikfaHNuMgzUY8zKixLjyySTUahn9B7uE9HUCvcw=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 16ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-19 16:32:18 -0700
+Processing by BuyPostsController#index as HTML
+  [1m[35mBuyPost Load (0.2ms)[0m  SELECT "buy_posts".* FROM "buy_posts"  ORDER BY "buy_posts"."price" ASC
+  Rendered buy_posts/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 34ms (Views: 31.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-19 16:32:19 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 56ms (Views: 54.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-19 16:44:05 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (8.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (60.6ms)
+Completed 200 OK in 328ms (Views: 302.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/registration.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 16:44:06 -0700
+
+
+Started GET "/assets/sell_post.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 16:44:06 -0700
+
+
+Started GET "/assets/registration_controller.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 16:44:06 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-04-19 16:44:06 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 16:44:06 -0700
+
+
+Started GET "/assets/registrations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 16:44:06 -0700
+
+
+Started GET "/assets/buy_post.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 16:44:06 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-04-19 16:44:06 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-04-19 16:44:06 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-04-19 16:44:06 -0700
+
+
+Started GET "/assets/buy_post.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 16:44:06 -0700
+
+
+Started GET "/assets/registration.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 16:44:06 -0700
+
+
+Started GET "/assets/registration_controller.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 16:44:06 -0700
+
+
+Started GET "/assets/registrations.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 16:44:06 -0700
+
+
+Started GET "/assets/sell_post.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 16:44:06 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 16:44:06 -0700
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for 127.0.0.1 at 2016-04-19 16:44:06 -0700
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-04-19 16:44:32 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ghrsopuE83i/WvZ1ahO6OL8hOhjvSJHzE34IkeRY6YpUdxHmGvUQvpDvWdnNadCubtziAP/4KzFyvYuBalwrDw==", "user"=>{"email"=>"sxk1693@berkeley.edu", "password"=>"[FILTERED]", "remember_me"=>"1", "admin_password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "sxk1693@berkeley.edu"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "remember_created_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["remember_created_at", "2016-04-19 23:44:32.949690"], ["updated_at", "2016-04-19 23:44:32.950748"], ["id", 3]]
+  [1m[36m (107.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2016-04-19 23:44:33.061016"], ["sign_in_count", 2], ["updated_at", "2016-04-19 23:44:33.062733"], ["id", 3]]
+  [1m[35m (95.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 311ms (ActiveRecord: 204.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-19 16:44:33 -0700
+Processing by BuyPostsController#index as HTML
+  [1m[36mBuyPost Load (0.3ms)[0m  [1mSELECT "buy_posts".* FROM "buy_posts"  ORDER BY "buy_posts"."price" ASC[0m
+  Rendered buy_posts/index.html.erb within layouts/application (8.5ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+Completed 200 OK in 46ms (Views: 40.2ms | ActiveRecord: 0.7ms)
+  [1m[36mUser Load (1.8ms)[0m  [1mSELECT "users".* FROM "users"[0m
+
+
+Started GET "/users/show" for 127.0.0.1 at 2016-04-19 16:46:56 -0700
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mSellPost Load (0.1ms)[0m  SELECT  "sell_posts".* FROM "sell_posts" WHERE "sell_posts"."user_id" = 3  ORDER BY "sell_posts"."id" ASC LIMIT 1000
+  [1m[36mBuyPost Load (0.1ms)[0m  [1mSELECT  "buy_posts".* FROM "buy_posts" WHERE "buy_posts"."user_id" = 3  ORDER BY "buy_posts"."id" ASC LIMIT 1000[0m
+  Rendered users/show.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 34ms (Views: 32.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-19 16:50:56 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BuyPostsController#index as HTML
+  [1m[35mBuyPost Load (0.2ms)[0m  SELECT "buy_posts".* FROM "buy_posts"  ORDER BY "buy_posts"."price" ASC
+  Rendered buy_posts/index.html.erb within layouts/application (8.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+Completed 200 OK in 273ms (Views: 259.9ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-04-19 16:50:58 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"nuBmAxJrEx/qZVKHSZoIBDwZWLmlllRVuIVHlvFy0R0rs/aRZxKkaVlgWNIGKsN36eMGrP86sewYUGOlLGAziw=="}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "remember_created_at" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["remember_created_at", nil], ["updated_at", "2016-04-19 23:50:58.156922"], ["id", 3]]
+  [1m[36m (200.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 232ms (ActiveRecord: 200.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-19 16:50:58 -0700
+Processing by BuyPostsController#index as HTML
+  [1m[35mBuyPost Load (0.3ms)[0m  SELECT "buy_posts".* FROM "buy_posts"  ORDER BY "buy_posts"."price" ASC
+  Rendered buy_posts/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 74ms (Views: 72.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-19 16:51:01 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (7.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (91.4ms)
+Completed 200 OK in 125ms (Views: 120.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-04-19 16:51:18 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AX/zhB7f/YEiR16KyO9WVrPDy2WUDw5WvWJ81eiZ81fo1RztRUH/FOL9dE2acBm6dKjS/HfbIpDcpe9Iqevivw==", "user"=>{"email"=>"sxk1693@berkeley.edu", "password"=>"[FILTERED]", "remember_me"=>"1", "admin_password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "sxk1693@berkeley.edu"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "remember_created_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_created_at", "2016-04-19 23:51:18.416514"], ["updated_at", "2016-04-19 23:51:18.417988"], ["id", 3]]
+  [1m[35m (118.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2016-04-19 23:44:33.061016"], ["current_sign_in_at", "2016-04-19 23:51:18.539594"], ["sign_in_count", 3], ["updated_at", "2016-04-19 23:51:18.541717"], ["id", 3]]
+  [1m[36m (117.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 346ms (ActiveRecord: 236.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-19 16:51:18 -0700
+Processing by BuyPostsController#index as HTML
+  [1m[35mBuyPost Load (0.3ms)[0m  SELECT "buy_posts".* FROM "buy_posts"  ORDER BY "buy_posts"."price" ASC
+  Rendered buy_posts/index.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+Completed 200 OK in 34ms (Views: 33.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/show" for 127.0.0.1 at 2016-04-19 16:51:24 -0700
+Processing by UsersController#show as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mSellPost Load (0.2ms)[0m  [1mSELECT  "sell_posts".* FROM "sell_posts" WHERE "sell_posts"."user_id" = 3  ORDER BY "sell_posts"."id" ASC LIMIT 1000[0m
+  [1m[35mBuyPost Load (0.2ms)[0m  SELECT  "buy_posts".* FROM "buy_posts" WHERE "buy_posts"."user_id" = 3  ORDER BY "buy_posts"."id" ASC LIMIT 1000
+  Rendered users/show.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 55ms (Views: 52.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/show" for 127.0.0.1 at 2016-04-19 16:52:51 -0700
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mSellPost Load (0.2ms)[0m  SELECT  "sell_posts".* FROM "sell_posts" WHERE "sell_posts"."user_id" = 3  ORDER BY "sell_posts"."id" ASC LIMIT 1000
+  [1m[36mBuyPost Load (0.2ms)[0m  [1mSELECT  "buy_posts".* FROM "buy_posts" WHERE "buy_posts"."user_id" = 3  ORDER BY "buy_posts"."id" ASC LIMIT 1000[0m
+  Rendered users/show.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 40ms (Views: 39.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/buy_post.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 16:52:51 -0700
+
+
+Started GET "/assets/registration.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 16:52:51 -0700
+
+
+Started GET "/assets/registration_controller.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 16:52:51 -0700
+
+
+Started GET "/assets/sell_post.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 16:52:51 -0700
+
+
+Started GET "/assets/registrations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 16:52:51 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-04-19 16:52:51 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 16:52:51 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-04-19 16:52:51 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-04-19 16:52:51 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-04-19 16:52:51 -0700
+
+
+Started GET "/assets/buy_post.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 16:52:51 -0700
+
+
+Started GET "/assets/registration.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 16:52:51 -0700
+
+
+Started GET "/assets/registration_controller.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 16:52:51 -0700
+
+
+Started GET "/assets/registrations.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 16:52:51 -0700
+
+
+Started GET "/assets/sell_post.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 16:52:51 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 16:52:51 -0700
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for 127.0.0.1 at 2016-04-19 16:52:51 -0700
+
+
+Started GET "/users/show" for 127.0.0.1 at 2016-04-19 16:52:52 -0700
+Processing by UsersController#show as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mSellPost Load (0.3ms)[0m  [1mSELECT  "sell_posts".* FROM "sell_posts" WHERE "sell_posts"."user_id" = 3  ORDER BY "sell_posts"."id" ASC LIMIT 1000[0m
+  [1m[35mBuyPost Load (0.2ms)[0m  SELECT  "buy_posts".* FROM "buy_posts" WHERE "buy_posts"."user_id" = 3  ORDER BY "buy_posts"."id" ASC LIMIT 1000
+  Rendered users/show.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 39ms (Views: 38.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/buy_post.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 16:52:52 -0700
+
+
+Started GET "/assets/registration.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 16:52:52 -0700
+
+
+Started GET "/assets/registration_controller.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 16:52:52 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 16:52:52 -0700
+
+
+Started GET "/assets/registrations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 16:52:52 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-04-19 16:52:52 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-04-19 16:52:52 -0700
+
+
+Started GET "/assets/sell_post.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 16:52:52 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-04-19 16:52:52 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-04-19 16:52:52 -0700
+
+
+Started GET "/assets/buy_post.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 16:52:52 -0700
+
+
+Started GET "/assets/registration.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 16:52:52 -0700
+
+
+Started GET "/assets/registration_controller.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 16:52:52 -0700
+
+
+Started GET "/assets/registrations.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 16:52:52 -0700
+
+
+Started GET "/assets/sell_post.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 16:52:52 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 16:52:52 -0700
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for 127.0.0.1 at 2016-04-19 16:52:52 -0700
+
+
+Started GET "/users/show" for 127.0.0.1 at 2016-04-19 16:52:53 -0700
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mSellPost Load (0.3ms)[0m  SELECT  "sell_posts".* FROM "sell_posts" WHERE "sell_posts"."user_id" = 3  ORDER BY "sell_posts"."id" ASC LIMIT 1000
+  [1m[36mBuyPost Load (0.3ms)[0m  [1mSELECT  "buy_posts".* FROM "buy_posts" WHERE "buy_posts"."user_id" = 3  ORDER BY "buy_posts"."id" ASC LIMIT 1000[0m
+  Rendered users/show.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 36ms (Views: 34.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/buy_post.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 16:52:53 -0700
+
+
+Started GET "/assets/registration.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 16:52:53 -0700
+
+
+Started GET "/assets/registration_controller.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 16:52:53 -0700
+
+
+Started GET "/assets/sell_post.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 16:52:53 -0700
+
+
+Started GET "/assets/registrations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 16:52:53 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-04-19 16:52:53 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-04-19 16:52:53 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 16:52:53 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-04-19 16:52:53 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-04-19 16:52:53 -0700
+
+
+Started GET "/assets/buy_post.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 16:52:53 -0700
+
+
+Started GET "/assets/registration.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 16:52:53 -0700
+
+
+Started GET "/assets/registration_controller.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 16:52:53 -0700
+
+
+Started GET "/assets/registrations.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 16:52:53 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 16:52:53 -0700
+
+
+Started GET "/assets/sell_post.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 16:52:53 -0700
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for 127.0.0.1 at 2016-04-19 16:52:53 -0700
+
+
+Started GET "/users/show" for 127.0.0.1 at 2016-04-19 16:52:54 -0700
+Processing by UsersController#show as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mSellPost Load (0.3ms)[0m  [1mSELECT  "sell_posts".* FROM "sell_posts" WHERE "sell_posts"."user_id" = 3  ORDER BY "sell_posts"."id" ASC LIMIT 1000[0m
+  [1m[35mBuyPost Load (0.3ms)[0m  SELECT  "buy_posts".* FROM "buy_posts" WHERE "buy_posts"."user_id" = 3  ORDER BY "buy_posts"."id" ASC LIMIT 1000
+  Rendered users/show.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 39ms (Views: 36.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/buy_post.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 16:52:54 -0700
+
+
+Started GET "/assets/registration.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 16:52:54 -0700
+
+
+Started GET "/assets/registration_controller.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 16:52:54 -0700
+
+
+Started GET "/assets/registrations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 16:52:54 -0700
+
+
+Started GET "/assets/sell_post.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 16:52:54 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-04-19 16:52:54 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-04-19 16:52:54 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-19 16:52:54 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-04-19 16:52:54 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-04-19 16:52:54 -0700
+
+
+Started GET "/assets/buy_post.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 16:52:54 -0700
+
+
+Started GET "/assets/registration.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 16:52:54 -0700
+
+
+Started GET "/assets/registration_controller.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 16:52:54 -0700
+
+
+Started GET "/assets/registrations.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 16:52:54 -0700
+
+
+Started GET "/assets/sell_post.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 16:52:54 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-19 16:52:54 -0700
+
+
+Started GET "/assets/application.self-3a3c8b61bda630ee689740ce7cbd0dd8ea6fdd45e2c42eef4661ab38cf268afe.js?body=1" for 127.0.0.1 at 2016-04-19 16:52:54 -0700

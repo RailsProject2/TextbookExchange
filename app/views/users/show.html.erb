@@ -35,3 +35,11 @@
 <% end %>
 <% end %>
 <% end %>
+
+<% if current_user%>
+    <% if current_user.make_admin %>
+      <h3>Admin</h3>
+    <% else %>
+      <h3>Not Admin</h3>
+    <% end %>
+<% end %>

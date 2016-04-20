@@ -17,7 +17,6 @@ Rails.application.routes.draw do
 
   get 'buy_posts', to: 'buy_posts#index'
 
-
   resources :sell_posts, only: [:new, :create]
 
   get 'sell_posts/sort', to: 'sell_posts#sort'
