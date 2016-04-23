@@ -7,10 +7,8 @@
 <% end %>
 
 <% @sell_posts.each do |sell_post| %>
-    <p> <%= "#{sell_post.name} #{sell_post.isbn} #{sell_post.price} " %> </p>
-
-
-
-
-
+    <h4><%= "#{sell_post.name}" %></h4> 
+    <p>ISBN: <%= "#{sell_post.isbn}" %></p>
+    <p>$<%= "#{sell_post.price}" %></p>
+    <p><%= button_to "Delete Post", sell_posts_delete_path(id: sell_post.id), :class => "button medium", :method => :delete %></p>
 <% end %>
