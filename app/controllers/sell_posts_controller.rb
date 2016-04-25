@@ -11,16 +11,16 @@ class SellPostsController < ApplicationController
         @sell_post = SellPost.new post_params
         @sell_post.user = current_user
         @sell_post.save
-        redirect_to users_show_path
-    end
-
-    def destroy
-        SellPost.find(params[:id]).destroy
-        redirect_to users_show_path
+        redirect_to action: 'index'
     end
 
     def sort
-        @sell_posts = SellPost.where(isbn: params[:id])
+        if SellPost.where(name: params[:id]) != []
+            @sell_posts = SellPost.where(name: params[:id])
+        else
+            @sell_posts = SellPost.where(isbn: params[:id])
+        end
+
     end
 
 private

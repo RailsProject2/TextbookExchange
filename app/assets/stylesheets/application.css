@@ -13,3 +13,28 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+
+html, .center {
+	text-align: center;
+	overflow: auto;
+	font-weight: bold;
+	font: Comic;
+
+}
+
+html, h1{
+	overflow: auto;
+	font-weight: bold;
+	font: Comic;
+}
+
+
+html, .center {
+	margin-bottom: 1px;
+	margin-top: 80px;
+	background-color: gray;
+}

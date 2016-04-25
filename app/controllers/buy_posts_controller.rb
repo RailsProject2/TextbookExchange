@@ -12,16 +12,16 @@ class BuyPostsController < ApplicationController
 		@buy_post = BuyPost.new post_params
 		@buy_post.user = current_user
 		@buy_post.save
-		redirect_to users_show_path
-	end
-
-	def destroy
-		BuyPost.find(params[:id]).destroy
-		redirect_to users_show_path
+		redirect_to action: 'index'
 	end
 
 	def sort
-		@buy_posts = BuyPost.where(isbn: params[:id])
+		if BuyPost.where(name: params[:id]) != []
+			@buy_posts = BuyPost.where(name: params[:id])
+		else
+			@buy_posts = BuyPost.where(isbn: params[:id])
+		end
+
 	end
 
 
