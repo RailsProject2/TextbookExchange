@@ -19,7 +19,6 @@ Rails.application.routes.draw do
 
   delete 'buy_posts/delete', to: 'buy_posts#destroy'
 
-
   resources :sell_posts, only: [:new, :create]
 
   get 'sell_posts/sort', to: 'sell_posts#sort'

@@ -24,3 +24,11 @@
     <h1>Hello, Guest!</h1>
     <p>Please log in or sign up to create and view your books to buy and sell.</p>
 <% end %>
+
+<% if current_user%>
+    <% if current_user.is_admin %>
+      <h3>Admin</h3>
+    <% else %>
+      <h3>Not Admin</h3>
+    <% end %>
+<% end %>

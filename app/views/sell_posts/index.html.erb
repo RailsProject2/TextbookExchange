@@ -10,5 +10,7 @@
     <h4><%= "#{sell_post.name}" %></h4> 
     <p>ISBN: <%= "#{sell_post.isbn}" %></p>
     <p>$<%= "#{sell_post.price}" %></p>
-    <p><%= button_to "Delete Post", sell_posts_delete_path(id: sell_post.id), :class => "button medium", :method => :delete %></p>
+    <% if current_user.is_admin %>
+      <p><%= button_to "Delete Post", sell_posts_delete_path(id: sell_post.id), :class => "button medium", :method => :delete %></p>
+    <% end %>
 <% end %>
