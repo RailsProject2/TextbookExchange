@@ -24,6 +24,14 @@ class BuyPostsController < ApplicationController
 
 	end
 
+	def destroy
+        @buypost = BuyPost.find_by_id(params[:id])
+
+        if @buypost.destroy
+            redirect_to action: "index"
+        end
+    end
+
 
 private
 	def post_params

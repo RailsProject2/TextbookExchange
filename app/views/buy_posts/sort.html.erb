@@ -8,7 +8,7 @@
 
 
 <% (@buy_posts.sort_by) .each do |buy_post| %>
-	<p> <%= "#{buy_post.name} #{buy_post.isbn} #{buy_post.price} " %> </p>
+	<p> <%= "#{buy_post.name} #{buy_post.isbn} #{buy_post.price} #{buy_post.user.name}" %> </p>
 
 
 

@@ -23,6 +23,15 @@ class SellPostsController < ApplicationController
 
     end
 
+
+    def destroy
+        @sellpost = SellPost.find_by_id(params[:id])
+
+        if @sellpost.destroy
+            redirect_to action: "index"
+        end
+    end
+
 private
     def post_params
         params.require(:sell_post).permit(:name, :isbn, :price)

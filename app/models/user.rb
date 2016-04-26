@@ -7,11 +7,18 @@ class User < ActiveRecord::Base
   @admin_password = ''
   @admin = false
 
-  def make_admin
-    if @admin_password == 'bestsiteever'
+  def make_admin(adminpwd)
+    if adminpwd == 'bestsiteever'
       @admin = true
+      adminpassword = 'bestsiteever'
       return true
     end
     return false
   end
 end
+
+  public
+  def is_admin
+    return adminpassword == 'bestsiteever'
+  end
+
